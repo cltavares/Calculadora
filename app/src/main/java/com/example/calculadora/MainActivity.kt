@@ -55,13 +55,17 @@ class MainActivity : AppCompatActivity() {
 
         botao5.setOnClickListener {
 
-            val text1: Double = text1.getText().toString().toDouble()
-            val text2: Double = text2.getText().toString().toDouble()
+            var valor1: String = text1.getText().toString()
+            var valor2: String = text2.getText().toString()
 
-            var valMultiply: Double = text1 * text2;
+            if (validaText(valor1,valor2)) {
 
-            Toast.makeText(this, "Hi multiply."+valMultiply, Toast.LENGTH_LONG).show()
-            textofinal.setText( valMultiply.toString());
+                var valMultiply: Double =
+                    valor1.toString().toDouble() * valor2.toString().toDouble();
+
+                Toast.makeText(this, "Hi multiply." + valMultiply, Toast.LENGTH_LONG).show()
+                textofinal.setText(valMultiply.toString());
+            }
         }
 
         botao6.setOnClickListener {
@@ -72,13 +76,16 @@ class MainActivity : AppCompatActivity() {
             textofinal.setText("");
         }
 
-/*
-        botao3.setOnClickListener{textofinal.setText((text1.text.toString().toDouble() - text2.text.toString().toDouble()).toString())};
-        botao5.setOnClickListener{textofinal.setText((text1.text.toString().toDouble() * text2.text.toString().toDouble()).toString())};
-        botao4.setOnClickListener{textofinal.setText((text1.text.toString().toDouble() / text2.text.toString().toDouble()).toString())};
-        botao2.setOnClickListener{textofinal.setText((text1.text.toString().toDouble() + text2.text.toString().toDouble()).toString())};
-*/
 
+    }
+
+    fun validaText(texto1: String, texto2: String): Boolean {
+
+        if(texto1 == "" && texto2 == "") {
+            Toast.makeText(this, "Favor informar o valores.", Toast.LENGTH_LONG).show()
+            return false;
+        }
+        return true;
 
     }
 }
