@@ -74,46 +74,53 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
     }
 
     private void multiplicar() {
-        validaText();
-        Double valor = Double.parseDouble(editText8.getText().toString()) * Double.parseDouble(editText12.getText().toString());
-        editText10.setText(valor.toString());
+        if(validaText()) {
+            Double valor = Double.parseDouble(editText8.getText().toString()) * Double.parseDouble(editText12.getText().toString());
+            editText10.setText(valor.toString());
+        }
+
     }
 
     private void dividir() {
-        validaText();
-        Double valor = Double.parseDouble(editText8.getText().toString()) / Double.parseDouble(editText12.getText().toString());
-        editText10.setText(valor.toString());
+        if(validaText()) {
+            Double valor = Double.parseDouble(editText8.getText().toString()) / Double.parseDouble(editText12.getText().toString());
+            editText10.setText(valor.toString());
+        }
+
     }
 
     private void subtrair() {
-        validaText();
-        Double valor = Double.parseDouble(editText8.getText().toString()) - Double.parseDouble(editText12.getText().toString());
-        editText10.setText(valor.toString());
+        if(validaText()) {
+            Double valor = Double.parseDouble(editText8.getText().toString()) - Double.parseDouble(editText12.getText().toString());
+            editText10.setText(valor.toString());
+        }
+
     }
 
     private void somar() {
-        validaText();
-        Double valor = Double.parseDouble(editText8.getText().toString()) + Double.parseDouble(editText12.getText().toString());
-        editText10.setText(valor.toString());
+        if(validaText()) {
+            Double valor = Double.parseDouble(editText8.getText().toString()) + Double.parseDouble(editText12.getText().toString());
+            editText10.setText(valor.toString());
+        }
     }
 
     private Boolean validaText() {
 
-        if(editText8.getText().toString().length() <= 0 && editText12.getText().toString().length() <= 0) {
-            editText8.setError("Preencha o campo valor 1.");
+        if(editText8.getText() == null ||  editText8.getText().toString().equals("")) {
             editText8.requestFocus();
+            editText8.setError("Preencha o campo valor 1.");
 
-            editText12.setError("Preencha o campo valor 2.");
+            return false;
+        }
+
+        if(editText12.getText() == null ||  editText12.getText().toString().equals("")) {
             editText12.requestFocus();
+            editText12.setError("Preencha o campo valor 2.");
 
             return false;
+
         }
 
-
-        if(editText8.getText().toString().length() == 0 && editText12.getText().toString().length() == 0) {
-            Toast.makeText(this, "Favor informar o valores.", Toast.LENGTH_LONG).show();
-            return false;
-        }
         return true;
 
     }
