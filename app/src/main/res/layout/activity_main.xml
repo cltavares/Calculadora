@@ -9,72 +9,77 @@
     tools:context=".MainActivity">
 
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/valor1"
-        android:inputType="numberDecimal"/>
+  <ScrollView
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/valor2"
-        android:inputType="numberDecimal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editText8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/valor1"
+            android:inputType="numberDecimal"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editText12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/valor2"
+            android:inputType="numberDecimal"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editText10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/resultado"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="+"
         />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/resultado"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="+"
-    />
+            android:text="/" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-" />
 
-        android:text="/" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="-" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clean" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="*"
- />
+      </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Clean"
-/>
+  </ScrollView>
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
 
 </LinearLayout>
