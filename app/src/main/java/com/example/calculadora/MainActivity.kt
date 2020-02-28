@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val botao4 = findViewById<AppCompatButton>(R.id.button4);
         val botao3 = findViewById<AppCompatButton>(R.id.button3);
         val botao5 = findViewById<AppCompatButton>(R.id.button5);
-        //var botao5 = findViewById(R.id.button5) as Button
+        val botao6 = findViewById<AppCompatButton>(R.id.button6);
 
         val text1 = findViewById<AppCompatEditText>(R.id.editText8);
 
@@ -25,15 +25,35 @@ class MainActivity : AppCompatActivity() {
 
         val textofinal = findViewById<AppCompatEditText>(R.id.editText10);
 
+        botao2.setOnClickListener {
+            // make a toast on button click event
+            val text1: Double = text1.getText().toString().toDouble()
+            val text2: Double = text2.getText().toString().toDouble()
+
+            var valAdd: Double = text1 + text2;
+            textofinal.setText( valAdd.toString());
+        }
 
 
         botao3.setOnClickListener {
             // make a toast on button click event
-            Toast.makeText(this, "Hi there! This is a Toast.", Toast.LENGTH_LONG).show()
+            val text1: Double = text1.getText().toString().toDouble()
+            val text2: Double = text2.getText().toString().toDouble()
+
+            var valSubtract: Double = text1 - text2;
+            textofinal.setText( valSubtract.toString());
+        }
+
+        botao4.setOnClickListener {
+            // make a toast on button click event
+            val text1: Double = text1.getText().toString().toDouble()
+            val text2: Double = text2.getText().toString().toDouble()
+
+            var valDivide: Double = text1 / text2;
+            textofinal.setText( valDivide.toString());
         }
 
         botao5.setOnClickListener {
-            // make a toast on button click event
 
             val text1: Double = text1.getText().toString().toDouble()
             val text2: Double = text2.getText().toString().toDouble()
@@ -42,6 +62,14 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Hi multiply."+valMultiply, Toast.LENGTH_LONG).show()
             textofinal.setText( valMultiply.toString());
+        }
+
+        botao6.setOnClickListener {
+            // make a toast on button click event
+
+            text1.setText("");
+            text2.setText("");
+            textofinal.setText("");
         }
 
 /*
